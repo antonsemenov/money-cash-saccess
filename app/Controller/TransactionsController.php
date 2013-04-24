@@ -1,7 +1,9 @@
-class TransactionsController extends AppController {
+<?php
+class PostsController extends AppController {
     public $helpers = array('Html', 'Form');
 
     public function index() {
         $this->set('transaction', $this->Transaction->find('all'));
     }
-}
+}   
+?>
