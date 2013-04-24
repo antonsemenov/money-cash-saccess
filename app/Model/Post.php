@@ -1,4 +1,4 @@
 <?php
-class Transaction extends AppModel {
+class Post extends AppModel {
 }
 ?>
