@@ -60,24 +60,14 @@
 class DATABASE_CONFIG {
 
 	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
+		'datasource' => 'Database/Postgres',
+		'persistent' =>  true,
+		'host' => 'ec2-54-225-106-211.compute-1.amazonaws.com',
+		'port' => '5432',
+		'login' => 'xajgitobkkqcfv',
+		'password' => '8ltRmcEzN1ZZY6-r_Uqja0Pj3o',
+		'database' => 'dcqeldifvvpij6',
 		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
-
-	public $test = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'test_database_name',
-		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 }
