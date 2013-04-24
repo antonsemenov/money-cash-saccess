@@ -1,6 +1,6 @@
 <h1><?php echo h($transactions['Transactions']['value']); ?></h1>
 
-<p><small>Created: <?php echo $transactions['Transactions']['created']; ?></small></p>
+<p><small>Created: <?php echo $transaction['Transaction']['created'] ?></small></p>
 
 <p><?php echo $transaction['Transaction']['category']; ?></p>
 
