@@ -11,8 +11,8 @@ class TransactionsController extends AppController {
             throw new NotFoundException(__('Invalid еransaction'));
         }
 
-        $еransaction = $this->Transaction->findById($id);
-        if (!$еransaction) {
+        $transaction = $this->Transaction->findById($id);
+        if (!$transaction) {
             throw new NotFoundException(__('Invalid transaction'));
         }
         $this->set('transaction', $transaction);
