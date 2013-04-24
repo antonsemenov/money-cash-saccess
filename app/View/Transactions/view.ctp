@@ -1,4 +1,4 @@
-<h1><?php echo h($transaction['Transactions']['value']); ?></h1>
+<h1><?php echo $transaction['Transactions']['value']; ?></h1>
 
 <p><small>Created: <?php echo $transaction['Transaction']['created'] ?></small></p>
 
