@@ -6,9 +6,9 @@ class Transaction extends AppModel {
         ),
         'body' => array(
             'payment_type' => 'notEmpty'
-        )
+        ),
 		'payment_type' => array(
-            'rule' => array('inList', array('credit', 'cash')),
+            'rule' => array('inList', array('credit', 'cash'))
         )
     );
 
