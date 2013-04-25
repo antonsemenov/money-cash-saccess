@@ -25,7 +25,7 @@ array('controller' => 'transactions', 'action' => 'view', $transaction['Transact
         <td><?php echo $transaction['Transaction']['created']; ?></td>
         <td><?php echo $transaction['Transaction']['category']; ?></td>
 		<td><?php echo $transaction['Transaction']['payment_type']; ?></td>
-		<td><?php echo $this->Html->link('Edit', array('action' => 'edit', $transaction[['Transaction[']['id'])); ?></td>
+		<td><?php echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?></td>
 	</tr>
     <?php endforeach; ?>
     <?php unset($transaction); ?>
