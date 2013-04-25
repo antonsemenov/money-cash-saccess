@@ -84,5 +84,5 @@ class TransactionsController extends AppController {
 
     return parent::isAuthorized($user);
 }
-	
+	}
 ?>
