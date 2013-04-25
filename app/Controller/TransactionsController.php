@@ -19,7 +19,7 @@ class TransactionsController extends AppController {
     }
 	
 	public function add() {
-        if ($this->request->is('transaction')) {
+        if ($this->request->is('post')) {
             $this->Transaction->create();
             if ($this->Transaction->save($this->request->data)) {
                 $this->Session->setFlash('Your transaction has been saved.');
