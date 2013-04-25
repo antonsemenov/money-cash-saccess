@@ -54,5 +54,16 @@ class TransactionsController extends AppController {
 			$this->request->data = $transaction;
 		}
 	}
+	
+	public function delete($id) {
+    if ($this->request->is('get')) {
+        throw new MethodNotAllowedException();
+    }
+
+    if ($this->Transaction->delete($id)) {
+        $this->Session->setFlash('The post with id: ' . $id . ' has been deleted.');
+        $this->redirect(array('action' => 'index'));
+    }
+}
 }   
 ?>
