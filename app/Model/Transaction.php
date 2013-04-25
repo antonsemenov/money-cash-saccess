@@ -8,6 +8,9 @@ class Transaction extends AppModel {
             'rule' => 'notEmpty'
         ),
     );
-
+	
+	public function isOwnedBy($transaction, $user) {
+    return $this->field('id', array('id' => $transaction, 'user_id' => $user)) === $transaction;
+}
 }
 ?>
