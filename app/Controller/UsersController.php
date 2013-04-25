@@ -66,10 +66,7 @@ class UsersController extends AppController {
         $this->redirect(array('action' => 'index'));
     }
 	
-	public function beforeFilter() {
-    parent::beforeFilter();
-    $this->Auth->allow('add'); // Letting users register themselves
-}
+
 
 	public function login() {
 		if ($this->request->is('post')) {
