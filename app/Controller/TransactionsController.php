@@ -51,7 +51,7 @@ class TransactionsController extends AppController {
 		}
 	
 		if (!$this->request->data) {
-			$this->request->data = $post;
+			$this->request->data = $transaction;
 		}
 	}
 }   
