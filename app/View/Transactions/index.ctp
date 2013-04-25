@@ -8,6 +8,8 @@
 		<th>Created time</th>
 		<th>Category</th>
 		<th>Payment type</th>
+		<th>Actions</th>
+		
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
@@ -23,7 +25,8 @@ array('controller' => 'transactions', 'action' => 'view', $transaction['Transact
         <td><?php echo $transaction['Transaction']['created']; ?></td>
         <td><?php echo $transaction['Transaction']['category']; ?></td>
 		<td><?php echo $transaction['Transaction']['payment_type']; ?></td>
-    </tr>
+		<td><?php echo $this->Html->link('Edit', array('action' => 'edit', $transaction[['Transaction[']['id'])); ?></td>
+	</tr>
     <?php endforeach; ?>
     <?php unset($transaction); ?>
 </table>

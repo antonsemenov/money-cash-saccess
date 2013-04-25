@@ -29,5 +29,30 @@ class TransactionsController extends AppController {
             }
         }
     }
+	
+	public function edit($id = null) {
+		if (!$id) {
+			throw new NotFoundException(__('Invalid transaction'));
+		}
+	
+		$transaction = $this->Transaction->findById($id);
+		if (!$transaction) {
+			throw new NotFoundException(__('Invalid transaction'));
+		}
+	
+		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->Transaction->id = $id;
+			if ($this->Transaction->save($this->request->data)) {
+				$this->Session->setFlash('Your transaction has been updated.');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Unable to update your transaction.');
+			}
+		}
+	
+		if (!$this->request->data) {
+			$this->request->data = $post;
+		}
+	}
 }   
 ?>
