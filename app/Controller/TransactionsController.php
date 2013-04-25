@@ -70,19 +70,19 @@ class TransactionsController extends AppController {
 	
 	public function isAuthorized($user) {
     // All registered users can add posts
-    if ($this->action === 'add') {
-        return true;
-    }
+		if ($this->action === 'add') {
+			return true;
+		}
 
     // The owner of a post can edit and delete it
-    if (in_array($this->action, array('edit', 'delete'))) {
-        $transactionsId = $this->request->params['pass'][0];
-        if ($this->Transactions->isOwnedBy($transactionsId, $user['id'])) {
-            return true;
-        }
-    }
+		if (in_array($this->action, array('edit', 'delete'))) {
+			$transactionsId = $this->request->params['pass'][0];
+			if ($this->Transactions->isOwnedBy($transactionsId, $user['id'])) {
+				return true;
+			}
+		}
 
-    return parent::isAuthorized($user);
-}
+		return parent::isAuthorized($user);
 	}
+}
 ?>
