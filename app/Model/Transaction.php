@@ -1,15 +1,12 @@
 <?php
 class Transaction extends AppModel {
     public $validate = array(
-        'title' => array(
-            'value' => 'notEmpty'
+        'value' => array(
+            'rule' => 'notEmpty'
         ),
-        'body' => array(
-            'payment_type' => 'notEmpty'
+        'payment_type' => array(
+            'rule' => 'notEmpty'
         ),
-		'payment_type' => array(
-            'rule' => array('inList', array('credit', 'cash'))
-        )
     );
 
 }
