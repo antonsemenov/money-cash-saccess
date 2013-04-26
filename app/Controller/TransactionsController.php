@@ -17,7 +17,7 @@ class TransactionsController extends AppController {
         if (!$transaction) {
             throw new NotFoundException(__('Invalid post'));
         }
-        $this->set('transactions', $transaction);
+        $this->set('transaction', $transaction);
     }
 	
 	public function add() {
