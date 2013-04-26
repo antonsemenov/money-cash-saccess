@@ -76,12 +76,12 @@ class TransactionsController extends AppController {
 		}
 
     // The owner of a post can edit and delete it
-		if (in_array($this->action, array('edit', 'delete'))) {
+/* 		if (in_array($this->action, array('edit', 'delete'))) {
 			$transactionsId = $this->request->params['pass'][0];
 			if ($this->Transaction->isOwnedBy($transactionsId, $user['id'])) {
 				return true;
 			}
-		}
+		} */
 
 		//return parent::isAuthorized($user);
 	}
