@@ -4,7 +4,7 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-        $this->redirect(array('action' => 'view'));
+        $this->set('transactions', $this->Transaction->find('all'));
     }
 	
 	public function view($id = null) {
