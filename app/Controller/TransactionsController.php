@@ -77,10 +77,10 @@ class TransactionsController extends AppController {
 
     // The owner of a post can edit and delete it
 
-		if ($this->Transaction->isOwnedBy($transactionsId, $user['id'])) {
-			return true;
-		}
-
+			$transactionsId = $this->request->params['pass'][0];
+			if ($this->Transaction->isOwnedBy($transactionsId, $user['id'])) {
+				return true;
+			}
 		//return parent::isAuthorized($user);
 	}
 }
