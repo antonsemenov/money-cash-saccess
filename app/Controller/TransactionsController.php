@@ -11,12 +11,27 @@ class TransactionsController extends AppController {
         if (!$id) {
             throw new NotFoundException(__('Invalid еransaction'));
         }
+		
 
         $transaction = $this->Transaction->findById($id);
         if (!$transaction) {
             throw new NotFoundException(__('Invalid transaction'));
         }
-        $this->set('transaction', $transaction);
+		
+		if (in_array($this->action, array('edit', 'delete'))) {
+			if ($id != null){
+				if ($this->Transactions->isOwnedBy($id, $user['id'])) {
+					$this->set('transaction', $transaction);
+					
+				} else {
+					$this->Session->setFlash(__('Access to transaction denied '));
+				}
+			} else {
+				$this->set('transaction', $transaction);
+			}
+		}
+		
+		
     }
 	
 	public function add() {
