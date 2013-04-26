@@ -1,6 +1,8 @@
 
-<td><?php echo $transaction['Transaction']['id']; ?></td>
-<td><?php echo $transaction['Transaction']['value']; ?></td>
-<td><?php echo $transaction['Transaction']['created']; ?></td>
-<td><?php echo $transaction['Transaction']['category']; ?></td>
-<td><?php echo $transaction['Transaction']['payment_type']; ?></td>
+<br>
+<?php echo $transaction['Transaction']['id']; ?><br>
+<?php echo $transaction['Transaction']['value']; ?><br>
+<?php echo $transaction['Transaction']['created']; ?><br>
+<?php echo $transaction['Transaction']['category']; ?><br>
+<?php echo $transaction['Transaction']['payment_type']; ?><br>
+<br>
