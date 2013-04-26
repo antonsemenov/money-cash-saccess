@@ -4,12 +4,8 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-		if (in_array($this->action, array('edit', 'delete'))) {
-			$transactionId = $this->request->params['pass'][0];
-			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
-				$this->set('transactions', $this->Transaction);
-			}
-		}
+
+        $this->set('transactions', $this->Transaction->find('all'));
     }
 	
     public function view($id = null) {
