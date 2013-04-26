@@ -4,19 +4,24 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-        $this->set('transactions', $this->Transaction->find('all'));
+		if (in_array($this->action, array('edit', 'delete'))) {
+			$transactionId = $this->request->params['pass'][0];
+			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
+				$this->set('transactions', $this->Transaction);
+			}
+		}
     }
 	
     public function view($id = null) {
         if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
+            throw new NotFoundException(__('Invalid transaction'));
         }
 
-        $post = $this->Post->findById($id);
-        if (!$post) {
+        $transaction = $this->Transactions->findById($id);
+        if (!$transaction) {
             throw new NotFoundException(__('Invalid post'));
         }
-        $this->set('post', $post);
+        $this->set('transactions', $transaction);
     }
 	
 	public function add() {
