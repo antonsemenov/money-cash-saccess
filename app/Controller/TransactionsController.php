@@ -82,7 +82,7 @@ class TransactionsController extends AppController {
 				return true;
 			}
 		} */
-
+		return true;
 		//return parent::isAuthorized($user);
 	}
 }
