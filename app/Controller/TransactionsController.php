@@ -7,31 +7,16 @@ class TransactionsController extends AppController {
         $this->set('transactions', $this->Transaction->find('all'));
     }
 	
-	public function view($id = null) {
+    public function view($id = null) {
         if (!$id) {
-            throw new NotFoundException(__('Invalid еransaction'));
+            throw new NotFoundException(__('Invalid post'));
         }
-		
 
-        $transaction = $this->Transaction->findById($id);
-        if (!$transaction) {
-            throw new NotFoundException(__('Invalid transaction'));
+        $post = $this->Post->findById($id);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid post'));
         }
-		
-		if (in_array($this->action, array('edit', 'delete'))) {
-			if ($id != null){
-				if ($this->Transactions->isOwnedBy($id, $user['id'])) {
-					$this->set('transaction', $transaction);
-					
-				} else {
-					$this->Session->setFlash(__('Access to transaction denied '));
-				}
-			} else {
-				$this->set('transaction', $transaction);
-			}
-		}
-		
-		
+        $this->set('post', $post);
     }
 	
 	public function add() {
