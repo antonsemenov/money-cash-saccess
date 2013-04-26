@@ -13,7 +13,7 @@ class TransactionsController extends AppController {
             throw new NotFoundException(__('Invalid transaction'));
         }
 
-        $transaction = $this->Transactions->findById($id);
+        $transaction = $this->Transaction->findById($id);
         if (!$transaction) {
             throw new NotFoundException(__('Invalid post'));
         }
