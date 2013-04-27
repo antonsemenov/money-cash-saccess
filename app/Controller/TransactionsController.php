@@ -7,7 +7,7 @@ class TransactionsController extends AppController {
 
         $user_transactions = $this->Transaction->find('all', array (
 			'conditions' => array('Transactions.user_id' => $user['id'])
-		))
+		));
 		
 		$this->set('transactions', $user_transactions);
     }
