@@ -3,9 +3,13 @@ class TransactionsController extends AppController {
     
 	public $helpers = array('Html', 'Form');
 
-    public function index() {
+    public function index($user) {
 
-        $this->set('transactions', $this->Transaction->find('all'));
+        $user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('Transactions.user_id' => $user[id])
+		))
+		
+		$this->set('transactions', $user_transactions);
     }
 	
     public function view($id = null) {
