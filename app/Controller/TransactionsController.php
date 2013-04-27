@@ -3,7 +3,7 @@ class TransactionsController extends AppController {
     
 	public $helpers = array('Html', 'Form');
 
-    public function index() {
+    public function index($user = null) {
 
         $user_transactions = $this->Transaction->find('all', array (
 			'conditions' => array('Transactions.user_id' => $user['id'])
