@@ -76,10 +76,13 @@ class TransactionsController extends AppController {
 		}
 
     // The owner of a post can edit and delete it
-
+		echo '<br /><script type="text/javascript">alert("hello1");</script>';
 		if (in_array($this->action, array('edit', 'delete'))) {
+			echo '<br /><script type="text/javascript">alert("hello2");</script>';
 			$transactionId = $this->request->params['pass'][0];
+			
 			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
+				echo '<br /><script type="text/javascript">alert("hello3");</script>';
 				return true;
 			}
 		}
