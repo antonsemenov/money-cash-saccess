@@ -33,6 +33,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	
+	public $theme = "Cakestrap";
     public $components = array(
         'Session',
         'Auth' => array(
@@ -52,7 +53,7 @@ class AppController extends Controller {
 	}
 	
 	public function beforeFilter() {
-        $this->Auth->allow('index', 'view', 'home','display');
+        $this->Auth->allow('home');
     }
 	
 
