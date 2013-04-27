@@ -81,7 +81,7 @@ class TransactionsController extends AppController {
 		if (in_array($this->action, array('edit', 'delete'))) {
 			$this->Session->setFlash('action edit delete');
 			
-			if ($this->request->params['pass'][1] == $user['id'])) {
+			if ($this->request->params['pass'][1] == $user['id']) {
 				$this->Session->setFlash('find by id');
 				return true;
 			}
