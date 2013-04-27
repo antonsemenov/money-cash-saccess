@@ -1,6 +1,8 @@
 <h1>Add Transaction</h1>
 <?php
+echo $this->Bootstrap->load();
 echo $this->Form->create('Transaction');
+
 ?>
 <fieldset>
 <?php
@@ -15,4 +17,3 @@ echo $this->Form->input('payment_type');
 <?php
 echo $this->Form->end('Save Transaction');
 ?>
-<div class="well">dddd</div>
