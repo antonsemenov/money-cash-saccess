@@ -44,10 +44,9 @@ class TransactionsController extends AppController {
                 $this->Session->setFlash('Unable to add your transaction.');
             }
         }
-/*  		$tags = $this->Transaction->Tag->find('all',array(
+  		$tags = $this->Transaction->Tag->find('list',array(
 			'fields' => array('Tag.label')
-		));  */
-		$tags = $this->Transaction->Tag->find('all');
+		));  
 		$this->set(compact('tags'));
     }
 	
