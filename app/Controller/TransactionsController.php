@@ -79,9 +79,10 @@ class TransactionsController extends AppController {
     // The owner of a post can edit and delete it
 		
 		if (in_array($this->action, array('edit', 'delete'))) {
-			$this->Session->setFlash('t_user_id = '. $this->request->params['pass'][1] . ' user(id) '.$user['id']);
 			
-			if ($this->request->params['pass'][1] == $user['id']) {
+			$transactionId = $this->request->params['pass'][0];
+			$this->Session->setFlash($transactionId);
+			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
 				$this->Session->setFlash('find by id');
 				return true;
 			}
