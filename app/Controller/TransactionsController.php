@@ -4,7 +4,7 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-		if ($this->Auth->user['role'] == 'admin'){
+/* 		if ($this->Auth->user['role'] == 'admin'){
 			
 			$this->set('transactions', $this->Transaction->find('all'));
 			
@@ -14,7 +14,13 @@ class TransactionsController extends AppController {
 			));
 		
 			$this->set('transactions', $user_transactions);
+		} */
+		if $this->isAuthorized($user){
+			$this->Session->setFlash('Author');
+		}else {
+			$this->Session->setFlash('NO');
 		}
+		
     }
 	
     public function view($id = null) {
@@ -73,7 +79,6 @@ class TransactionsController extends AppController {
 		}
 
 		if ($this->Transaction->delete($id)) {
-			$this->Session->setFlash('The post with id: ' . $id . ' has been deleted.');
 			$this->redirect(array('action' => 'index'));
 		}
 	}
