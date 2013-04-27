@@ -4,18 +4,21 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
- 		if ($this->isAuthorized($this->Auth->user())){
+		$user = $this->Auth->user();
+ 		if(!$user){
+			if ($this->isAuthorized($this->Auth->user())){
+				
+				$this->set('transactions', $this->Transaction->find('all'));
+				
+			}else{
+				$user_transactions = $this->Transaction->find('all', array (
+					'conditions' => array('user_id' =>  $this->Auth->user('id'))
+				));
 			
-			$this->set('transactions', $this->Transaction->find('all'));
-			
-		}else{
-			$user_transactions = $this->Transaction->find('all', array (
-				'conditions' => array('user_id' =>  $this->Auth->user('id'))
-			));
-		
-			$this->set('transactions', $user_transactions);
-		} 
-
+				$this->set('transactions', $user_transactions);
+			}
+		} else 
+		throw new NotFoundException(__('Only users can get access to this page'));
     }
 	
     public function view($id = null) {
@@ -91,7 +94,6 @@ class TransactionsController extends AppController {
 			
 			$transactionId = $this->request->params['pass'][0];
 			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
-				$this->Session->setFlash('find by id');
 				return true;
 			}
 		}
