@@ -54,6 +54,7 @@ class TransactionsController extends AppController {
 		}
 	
 		$transaction = $this->Transaction->findById($id);
+		$this->request->data['Transaction']['user_id'] = $this->Auth->user('id');
 		if (!$transaction) {
 			throw new NotFoundException(__('Invalid transaction'));
 		}
@@ -71,6 +72,9 @@ class TransactionsController extends AppController {
 		if (!$this->request->data) {
 			$this->request->data = $transaction;
 		}
+		$tags = $this->Transaction->Tag->find('list');
+		$this->set(compact('tags'));
+		
 	}
 	
 	public function delete($id) {
