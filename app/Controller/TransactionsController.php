@@ -4,7 +4,7 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-/* 		if ($this->Auth->user['role'] == 'admin'){
+ 		if ($this->Auth->user['role'] == 'admin'){
 			
 			$this->set('transactions', $this->Transaction->find('all'));
 			
@@ -14,8 +14,7 @@ class TransactionsController extends AppController {
 			));
 		
 			$this->set('transactions', $user_transactions);
-		} */
-		$this->Session->setFlash($this->Auth->user['role']);
+		} 
 
     }
 	
