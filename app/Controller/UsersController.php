@@ -5,7 +5,7 @@ class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
     
 	public function index() {
- 		if($this->isAuthorized($this->User())){
+ 		if($this->isAuthorized($this->Auth->user())){
 			$this->User->recursive = 0;
 			$this->set('users', $this->paginate());
 		} else
