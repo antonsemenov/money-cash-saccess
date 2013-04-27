@@ -44,8 +44,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
+			<div class="well">
+				<?php echo $this->fetch('content'); ?>
+			</div>
 		</div>
  		<div id="footer">
 			<?php echo 'Footer';
