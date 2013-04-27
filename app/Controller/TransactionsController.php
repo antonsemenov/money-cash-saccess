@@ -4,7 +4,7 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-		if (parent::isAuthorized($user)){
+		if (isAuthorized($this->Auth->user)){
 			
 			$this->set('transactions', $this->Transaction->find('all'));
 			
