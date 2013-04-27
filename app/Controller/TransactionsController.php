@@ -72,17 +72,18 @@ class TransactionsController extends AppController {
 	public function isAuthorized($user) {
     // All registered users can add posts
 		if ($this->action === 'add') {
+			$this->Session->setFlash('action add');
 			return true;
 		}
 
     // The owner of a post can edit and delete it
-		echo '<br /><script type="text/javascript">alert("hello1");</script>';
+		
 		if (in_array($this->action, array('edit', 'delete'))) {
-			echo '<br /><script type="text/javascript">alert("hello2");</script>';
+			$this->Session->setFlash('action edit delete');
 			$transactionId = $this->request->params['pass'][0];
 			
 			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
-				echo '<br /><script type="text/javascript">alert("hello3");</script>';
+				$this->Session->setFlash('find by id');
 				return true;
 			}
 		}
