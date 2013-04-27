@@ -47,7 +47,7 @@ class TransactionsController extends AppController {
 /* 		$tags = $this->Transaction->Tag->find('all',array(
 			'fields' => array('Tag.label')
 		)); */
-		$tags = $this->Transaction->Tag->generateList(null,null,null,null,"{n}.Tag.label")
+		$tags = $this->Transaction->Tag->generateList(null,null,null,null,"{n}.Tag.label");
 		$this->set(compact('tags'));
     }
 	
