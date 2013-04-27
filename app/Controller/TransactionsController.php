@@ -56,13 +56,13 @@ class TransactionsController extends AppController {
 		}
 	
 		$transaction = $this->Transaction->findById($id);
-		$this->request->data['Transaction']['user_id'] = $this->Auth->user('id');
 		if (!$transaction) {
 			throw new NotFoundException(__('Invalid transaction'));
 		}
-	
+		
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->Transaction->id = $id;
+			$this->Transactionu->user_id = $this->Auth->user('id');
 			if ($this->Transaction->save($this->request->data)) {
 				$this->Session->setFlash('Your transaction has been updated.');
 				$this->redirect(array('action' => 'index'));
