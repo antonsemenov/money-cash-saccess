@@ -16,7 +16,7 @@ class Transaction extends AppModel {
 			),
 		),
     );
-	public $displayField = 'id';
+	public $displayField = 'label';
  
 	public $hasAndBelongsToMany = array(
 	'Tag' => array(
