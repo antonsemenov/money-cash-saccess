@@ -8,7 +8,7 @@ class TransactionsController extends AppController {
 			
 			$this->set('transactions', $this->Transaction->find('all'));
 			
-		}else
+		}else{
 			$user_transactions = $this->Transaction->find('all', array (
 				'conditions' => array('user_id' =>  $this->Auth->user('id'))
 			));
