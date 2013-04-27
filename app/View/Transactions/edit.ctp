@@ -1,10 +1,16 @@
-<h1>Add Transaction</h1>
+<h1>Edit Transaction</h1>
 <?php
 echo $this->Form->create('Transaction');
-echo $this->Form->input('user_id', array('options' => array(1,2)));
+?>
+<fieldset>
+<?php
 echo $this->Form->input('value');
 echo $this->Form->input('created');
 echo $this->Form->input('category');
+echo $this->Form->input('Transaction.Tag[1]',array('label'=>'At least one Tag', 'type'=>'select', 'multiple'=>true));
 echo $this->Form->input('payment_type');
+?>
+</fieldset>
+<?php
 echo $this->Form->end('Save Transaction');
 ?>
