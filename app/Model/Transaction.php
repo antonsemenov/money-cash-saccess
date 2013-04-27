@@ -30,9 +30,9 @@ class Transaction extends AppModel {
  
 	public function beforeSave($options = array()){
 		foreach (array_keys($this->hasAndBelongsToMany) as $model){
-			if(isset($this->data[$this->id][$model])){
-			$this->data[$model][$model] = $this->data[$this->id][$model];
-			unset($this->data[$this->id][$model]);
+			if(isset($this->data[$this->name][$model])){
+			$this->data[$model][$model] = $this->data[$this->name][$model];
+			unset($this->data[$this->name][$model]);
 			}
 		}
     return true;
