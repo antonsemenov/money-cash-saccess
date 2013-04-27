@@ -72,7 +72,7 @@ class TransactionsController extends AppController {
 	public function isAuthorized($user) {
     // All registered users can add posts
 		if ($this->action === 'add') {
-			$this->Session->setFlash('action add');
+
 			return true;
 		}
 
@@ -81,7 +81,6 @@ class TransactionsController extends AppController {
 		if (in_array($this->action, array('edit', 'delete'))) {
 			
 			$transactionId = $this->request->params['pass'][0];
-			$this->Session->setFlash($transactionId);
 			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
 				$this->Session->setFlash('find by id');
 				return true;
