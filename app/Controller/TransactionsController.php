@@ -74,7 +74,9 @@ class TransactionsController extends AppController {
 		if (!$this->request->data) {
 			$this->request->data = $transaction;
 		}
-		$tags = $this->Transaction->Tag->find('list');
+		$tags = $this->Transaction->Tag->find('list',array(
+			'fields' => array('Tag.label')
+		));  
 		$this->set(compact('tags'));
 		
 	}
