@@ -1,6 +1,6 @@
 <h1>Add Transaction</h1>
 <?php
-echo $this->Bootstrap->load();
+
 echo $this->Form->create('Transaction');
 
 ?>
