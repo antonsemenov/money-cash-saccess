@@ -4,7 +4,7 @@ class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
 
     public function index() {
-		if ($this->isAuthorized($this->Auth->user)){
+		if ($this->Auth->user['role'] == 'admin')){
 			
 			$this->set('transactions', $this->Transaction->find('all'));
 			
