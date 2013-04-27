@@ -52,7 +52,7 @@ class AppController extends Controller {
 	}
 	
 	public function beforeFilter() {
-        $this->Auth->allow('controller' => 'pages', 'action' => 'display', 'home');
+        $this->Auth->allow('home');
     }
 	
 
