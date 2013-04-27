@@ -15,7 +15,7 @@ class TransactionsController extends AppController {
 		
 			$this->set('transactions', $user_transactions);
 		} */
-		if $this->isAuthorized($user){
+		if ($this->isAuthorized($user)){
 			$this->Session->setFlash('Author');
 		}else {
 			$this->Session->setFlash('NO');
