@@ -80,7 +80,7 @@ class TransactionsController extends AppController {
 		
 		if (in_array($this->action, array('edit', 'delete'))) {
 			
-			$transactionId = $this->request->data['Transaction']['user_id'];
+			$transactionId = $this->request->params['pass'][0];
 			$this->Session->setFlash($transactionId);
 			if ($this->Transaction->isOwnedBy($transactionId, $user['id'])) {
 				$this->Session->setFlash('find by id');

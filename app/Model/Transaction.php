@@ -10,6 +10,7 @@ class Transaction extends AppModel {
     );
 	
 	public function isOwnedBy($transaction, $user) {
+	$this->Session->setFlash($this->field('id', array('id' => $transaction, 'user_id' => $user)));
     return $this->field('id', array('id' => $transaction, 'user_id' => $user)) === $transaction;
 }
 }
