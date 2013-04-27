@@ -1,4 +1,6 @@
 <?php
+App::uses('AppController', 'Controller');
+
 class TransactionsController extends AppController {
     
 	public $helpers = array('Html', 'Form');
@@ -42,6 +44,8 @@ class TransactionsController extends AppController {
                 $this->Session->setFlash('Unable to add your transaction.');
             }
         }
+		$tags = $this->Transaction->Tag->find('list');
+		$this->set(compact('tags'));
     }
 	
 	public function edit($id = null) {
