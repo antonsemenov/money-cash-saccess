@@ -5,12 +5,16 @@ class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
     
 	public function index() {
- 		if($this->isAuthorized($this->Auth->user())){
-			$this->User->recursive = 0;
-			$this->set('users', $this->paginate());
-		} else
-		throw new NotFoundException(__('Only users can get access to this page'));
-    }
+		if ($this->Auth->user()){
+			if($this->isAuthorized($this->Auth->user())){
+				$this->User->recursive = 0;
+				$this->set('users', $this->paginate());
+			} else
+			throw new NotFoundException(__('Only admin can get access to this page'));
+		}else{
+			throw new NotFoundException(__('Log in to get acces to this page'));
+		}
+	}
 
      public function beforeFilter() {
         parent::beforeFilter();
