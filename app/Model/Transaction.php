@@ -11,7 +11,7 @@ class Transaction extends AppModel {
 	
 	public function isOwnedBy($transaction, $user) {
 	
-	return !($this->field('id', array('id' => $transaction, 'user_id' => $user)) === $transaction);
+	return $this->field('id', array('id' => $transaction, 'user_id' => $user)) == $transaction;
 }
 }
 ?>
