@@ -1,5 +1,4 @@
-.wall
-{
-background-image:url('../img/crown.png') no-repeat center;
-background-color:#cccccc;
-} 
+html { 
+     background-image: url('../img/crown.png');
+     background-repeat: no-repeat; 
+ }
