@@ -1,6 +1,7 @@
 <?php
 $this->start('header');
-echo $this->Html->image('crown.png');
+echo 'hello';
+//echo $this->Html->image('crown.png');
 $this->end();
 ?>
 
