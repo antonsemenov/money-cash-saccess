@@ -36,9 +36,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			echo $this->Html->css('bootstrap-responsive.min');
 			echo $this->Html->css('core');
 			echo $this->Html->css('default');
-
 			echo $this->fetch('css');
-			
 			echo $this->Html->script('libs/jquery');
 			echo $this->Html->script('libs/bootstrap.min');
 			
