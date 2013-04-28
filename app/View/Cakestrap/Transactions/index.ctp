@@ -36,4 +36,5 @@ array('controller' => 'transactions', 'action' => 'view', $transaction['Transact
 	</tr>
     <?php endforeach; ?>
     <?php unset($transaction); ?>
+	<div class="well">fi</div>
 </table>
