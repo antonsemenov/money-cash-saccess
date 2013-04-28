@@ -35,6 +35,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			echo $this->Html->css('bootstrap.min');
 			echo $this->Html->css('bootstrap-responsive.min');
 			echo $this->Html->css('core');
+			echo $this->Html->css('default');
 
 			echo $this->fetch('css');
 			
@@ -57,8 +58,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<div id="content" class="container">
 
 				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->Html->css('default'); ?>
-				<?php echo $this->fetch('css'); ?>
 				<?php echo $this->fetch('content'); ?>
 			</div><!-- #header .container -->
 			
