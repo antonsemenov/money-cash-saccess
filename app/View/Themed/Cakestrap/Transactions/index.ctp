@@ -1,5 +1,5 @@
 <?php 
-$this->extend('/Cakestrap/Transactions');
+$this->extend('/Layouts/default');
 
 $this->start('header');
 echo $html->image('/img/crown.png');
