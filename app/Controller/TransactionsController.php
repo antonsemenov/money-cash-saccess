@@ -3,6 +3,8 @@ App::uses('AppController', 'Controller');
 
 class TransactionsController extends AppController {
 	public $helpers = array('Html', 'Form');
+	
+	
 
     public function index() {
 		$user = $this->Auth->user();

@@ -1,3 +1,9 @@
+<?php 
+$this->extend('/Layouts/default');
+$this->start('header');
+$this->Html->css('default');
+$this->end();
+?>
 <h1>Users transactions</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
 <table class="table">
@@ -36,5 +42,4 @@ array('controller' => 'transactions', 'action' => 'view', $transaction['Transact
 	</tr>
     <?php endforeach; ?>
     <?php unset($transaction); ?>
-	<div class="well">fi</div>
 </table>

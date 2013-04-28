@@ -49,7 +49,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div id="main-container">
 		
 			<div id="header" class="container">
-				<h1>MONEY-CASH-SUCCESS</h1>
+				
+				<?php echo $this->fetch('header');?>
 			</div><!-- #header .container -->
 			
 			<div id="content" class="container">
