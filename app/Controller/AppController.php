@@ -59,7 +59,7 @@ class AppController extends Controller {
     }
 	
 	function beforeRender() {
-		$this->view = "Cakestrap";
+		$this->view = "Theme";
 		$this->theme = "Cakestrap";
 		}
 
