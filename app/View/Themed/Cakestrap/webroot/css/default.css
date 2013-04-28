@@ -1,9 +1,4 @@
-h1 {
-font-size: 16px;
-color: #006633;
-font-weight: bold;
-margin-top: 0px;
-margin-bottom: 3px;
-
-
-} 
+body {
+	background-image: url('../img/crown.png');
+	background-color: #c7b39b;
+   }
