@@ -9,3 +9,4 @@
     </fieldset>
 <?php echo $this->Form->end(__('Login')); ?>
 </div>
+<?php echo $html->url('/users/add')
