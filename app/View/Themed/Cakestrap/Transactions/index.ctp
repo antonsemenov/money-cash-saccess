@@ -1,10 +1,3 @@
-<?php 
-$this->extend('/Layouts/default');
-
-$this->start('header');
-echo $this->$html->image('/img/crown.png');
-?>
-
 <?php $this->end(); ?>
 
 <h1>Users transactions</h1>
