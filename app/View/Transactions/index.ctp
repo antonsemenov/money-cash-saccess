@@ -1,9 +1,3 @@
-<?php 
-$this->extend('/Layouts/default');
-$this->start('header');
-$this->Html->css('default');
-$this->end();
-?>
 <h1>Users transactions</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
 <table class="table">
