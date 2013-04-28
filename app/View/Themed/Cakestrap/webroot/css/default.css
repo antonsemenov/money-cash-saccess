@@ -1,4 +1,4 @@
 body {
-	background-image: url('../img/crown.png');
-	background-color: #c7b39b;
+	background-image: url('../img/crown.png') no-repeat center;
+	background-color: #fff;
    }
