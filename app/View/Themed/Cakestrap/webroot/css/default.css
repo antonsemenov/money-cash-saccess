@@ -2,3 +2,6 @@ html {
      background-image: url('../img/crown.png');
      background-repeat: no-repeat; 
  }
+body {
+     background-color: transparent; 
+ }
