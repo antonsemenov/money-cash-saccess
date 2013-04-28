@@ -56,7 +56,7 @@ class PagesController extends AppController {
 
 		$count = count($path);
 		if (!$count) {
-			$this->redirect('/');
+			$this->redirect('/users/login');
 		}
 		$page = $subpage = $title_for_layout = null;
 
