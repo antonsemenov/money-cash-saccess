@@ -1,3 +1,12 @@
+<?php 
+$this->extend('/Cakestrap/Transactions');
+
+$this->start('header');
+echo $html->image('/img/crown.png');
+?>
+
+<?php $this->end(); ?>
+
 <h1>Users transactions</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
 <table class="table">
