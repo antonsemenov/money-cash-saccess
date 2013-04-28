@@ -53,10 +53,15 @@ class AppController extends Controller {
 		return false;
 	}
 	
+	
 	public function beforeFilter() {
         $this->Auth->allow('home');
     }
 	
+	function beforeRender() {
+		$this->view = "Cakestrap";
+		$this->theme = "Cakestrap";
+		}
 
 	
 }

@@ -35,9 +35,9 @@ class Transaction extends AppModel {
 			unset($this->data[$this->name][$model]);
 			}
 		}
+		
     return true;
 	}
-	
 	
 	
 	

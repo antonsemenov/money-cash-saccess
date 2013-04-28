@@ -2,7 +2,6 @@
 App::uses('AppController', 'Controller');
 
 class TransactionsController extends AppController {
-    public $theme = "Cakestrap";
 	public $helpers = array('Html', 'Form');
 
     public function index() {
