@@ -1,11 +1,4 @@
-<?php
-$this->start('header');
-echo 'hello';
-//echo $this->Html->image('crown.png');
-$this->end();
-?>
-
-<h1>Users transactions</h1>
+<h1>Users transactions222</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
 <table class="table">
     <tr>
