@@ -57,7 +57,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<div id="content" class="container">
 
 				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->Html->css('default.css'); ?>
+				<?php echo $this->Html->css('default'); ?>
 				<?php echo $this->fetch('content'); ?>
 			</div><!-- #header .container -->
 			
