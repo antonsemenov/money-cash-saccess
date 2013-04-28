@@ -50,7 +50,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div id="main-container">
 		
 			<div id="header" class="container">
-				<?php echo $this->$Html->image('/img/crown.png'); ?>
+				<?php echo $this->Html->image('crown.png'); ?>
 			</div><!-- #header .container -->
 			
 			<div id="content" class="container">
