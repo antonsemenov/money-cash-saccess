@@ -1,6 +1,6 @@
 <h1>Users transactions</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
-<table class='table'>
+<table class="table">
     <tr>
         <th>Id</th>
         <th>User id</th>
