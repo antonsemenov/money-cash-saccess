@@ -1,3 +1,5 @@
-body{
-	background:  url('../img/crown.png') no-repeat center;
-}
+body
+{
+background-image:url('../img/crown.png') no-repeat center;
+background-color:#cccccc;
+} 
