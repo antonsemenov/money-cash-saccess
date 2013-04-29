@@ -5,7 +5,6 @@
 	<head>
 		<?php echo $this->Html->charset(); ?>
 		<title>
-			<?php echo $cakeDescription ?>:
 			<?php echo $title_for_layout; ?>
 		</title>
 		<?php
