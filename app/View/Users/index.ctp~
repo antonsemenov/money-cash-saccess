@@ -6,7 +6,7 @@
 	<th>Name</th>
 	<th>Pass</th>
 	<?php 
-		if ($this->isAuthorized($this->Auth->$user){
+		if ($this->isAuthorized($this->Auth->$user)){
 		echo '<th>Role</th>';			
 	}?>
 		

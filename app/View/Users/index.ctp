@@ -19,7 +19,7 @@
         <td><?php echo $user['User']['id']; ?></td>
         <td><?php echo $user['User']['username']; ?></td>
 	<?php 
-		if (isAuthorized($this->Auth->$user){
+		if (isAuthorized($this->Auth->$user)){
 		echo '<td>'. $user['User']['password']. '</td>';			
 	}?>
         <td><?php echo $user['User']['role']; ?></td>
