@@ -6,4 +6,8 @@ body {
 	background-color: #fff;
    }
    
-.btn-custom { background-color: hsl(48, 100%, 37%) !important; background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fedb4c", endColorstr="#bc9600"); background-image: -khtml-gradient(linear, left top, left bottom, from(#fedb4c), to(#bc9600)); background-image: -moz-linear-gradient(top, #fedb4c, #bc9600); background-image: -ms-linear-gradient(top, #fedb4c, #bc9600); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fedb4c), color-stop(100%, #bc9600)); background-image: -webkit-linear-gradient(top, #fedb4c, #bc9600); background-image: -o-linear-gradient(top, #fedb4c, #bc9600); background-image: linear-gradient(#fedb4c, #bc9600); border-color: #bc9600 #bc9600 hsl(48, 100%, 30%); color: #333 !important; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.46); -webkit-font-smoothing: antialiased; }
+.content{
+	background-color: hsl(48, 100%, 67%) !important;
+	width: 80% ;
+	opacity: 0.3;
+}
