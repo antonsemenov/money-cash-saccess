@@ -8,7 +8,9 @@
 
 	<?php 
 		echo $this->Form->input('Transaction.Tag', array('label'=>'Tags', 'type'=>'select', 'multiple'=>true));
-		echo $this->Form->input('payment_type');		
+		echo $this->Form->input('role', array(
+            'options' => array('cash' => 'Cash', 'credit' => 'Credit')
+        ));		
 	?>
 
 	<?php echo $this->Form->input('created');?>
