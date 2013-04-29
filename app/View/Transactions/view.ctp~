@@ -9,4 +9,5 @@
 <dd><?php echo $transaction['Transaction']['category']; ?></dd>
 <dt>Payment type</dt>
 <dd><?php echo $transaction['Transaction']['payment_type']; ?></dd>
+</dl>
 <br>
