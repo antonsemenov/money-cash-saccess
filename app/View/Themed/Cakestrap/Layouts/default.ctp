@@ -16,6 +16,23 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
+
+
+if (!Configure::read('debug')):
+throw new NotFoundException();
+endif;
+App::uses('Debugger', 'Utility');
+?>
+<h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
+<?php
+if (Configure::read('debug') > 0):
+Debugger::checkSecurityKeys();
+endif;
+?>
+
+
+
+
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
