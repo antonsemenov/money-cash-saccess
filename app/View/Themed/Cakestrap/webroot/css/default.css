@@ -5,3 +5,12 @@ body {
 	background-position: right bottom;
 	background-color: #fff;
    }
+
+.well{
+	 background-color: rgba(0, 0, 0, 0.7); 
+
+}
+
+h1{
+	color: #fbb450;
+}
