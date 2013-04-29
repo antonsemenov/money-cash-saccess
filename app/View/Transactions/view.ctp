@@ -1,4 +1,3 @@
-
 <br>
 <h1><?php echo $transaction['Transaction']['id']; ?><</h1>
 <dl class="dl-horizontal">
@@ -10,4 +9,5 @@
 <dd><?php echo $transaction['Transaction']['category']; ?></dd>
 <dt>Payment type</dt>
 <dd><?php echo $transaction['Transaction']['payment_type']; ?></dd>
+</dl>
 <br>
