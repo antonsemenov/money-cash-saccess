@@ -1,5 +1,5 @@
 <h1>Add Transaction</h1>
-<?phpecho $this->Form->create('Transaction');?>
+<?php echo $this->Form->create('Transaction');?>
 <fieldset>
 	<?php 
 		echo $this->Form->input('value'); 
