@@ -1,13 +1,14 @@
 
 <br>
-<h1><?php echo $transaction['Transaction']['id']; ?><</h1>
 <dl class="dl-horizontal">
-<dt>Value</dt>
+<dt>Transaction id</dt>
+<dd><?php echo $transaction['Transaction']['id']; ?></dd>
+<dt>Transaction id</dt>
 <dd><?php echo $transaction['Transaction']['value']; ?><</dd>
-<dt>Created</dt>
+<dt>Transaction id</dt>
 <dd><?php echo $transaction['Transaction']['created']; ?></dd>
-<dt>Category</dt>
+<dt>Transaction id</dt>
 <dd><?php echo $transaction['Transaction']['category']; ?></dd>
-<dt>Payment type</dt>
+<dt>Transaction id</dt>
 <dd><?php echo $transaction['Transaction']['payment_type']; ?></dd>
 <br>
