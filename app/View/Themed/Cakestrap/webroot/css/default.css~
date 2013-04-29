@@ -10,5 +10,4 @@ body {
 	background-color: hsl(48, 100%, 67%) !important;
 	width: 80% ;
 	opacity: 0.3;
-	border
 }
