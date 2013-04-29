@@ -20,8 +20,9 @@
         <td><?php echo $user['User']['username']; ?></td>
 	<?php 
 		if (isAuthorized($this->Auth->$user){
-		echo '<td>'. $user['User']['password']. '</td>';			
+		echo '<th>Role</th>';			
 	}?>
+        <td><?php echo $user['User']['password']; ?></td>
         <td><?php echo $user['User']['role']; ?></td>
 	</tr>
     <?php endforeach; ?>
