@@ -1,4 +1,4 @@
-`	<h1>Transactions #<?php echo $transaction['Transaction']['id']; ?></h1>
+<h1>Transactions #<?php echo $transaction['Transaction']['id']; ?></h1>
 <dl>
 	<dt>Id:</dt>
 	<dd><?php echo $transaction['Transaction']['id']; ?></dd>
