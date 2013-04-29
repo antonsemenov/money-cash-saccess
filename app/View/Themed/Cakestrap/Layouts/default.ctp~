@@ -28,8 +28,6 @@ App::uses('Debugger', 'Utility');
 if (Configure::read('debug') > 0):
 Debugger::checkSecurityKeys();
 endif;
-?>
-
 
 
 

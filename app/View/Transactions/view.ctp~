@@ -1,7 +1,7 @@
 <h1><?php echo $transaction['Transaction']['id']; ?></h1>
 <dl class="dl-horizontal">
 	<dt>Value</dt>
-	<dd><?php echo $transaction['Transaction']['value']; ?><</dd>
+	<dd><?php echo $transaction['Transaction']['value']; ?></dd>
 	<dt>Created</dt>
 	<dd><?php echo $transaction['Transaction']['created']; ?></dd>
 	<dt>Category</dt>
