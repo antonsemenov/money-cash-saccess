@@ -14,3 +14,12 @@ body {
 h1{
 	color: #fbb450;
 }
+
+a{
+	color: #000;
+}
+
+a:hover{
+	color: #fbb450;
+}
+

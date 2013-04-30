@@ -21,7 +21,7 @@
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
 	<?php foreach ($transaction['Tag'] as $tag){
-		echo $tag['label']; 
+		echo $tag['label']. ' ' ; 
 	} ?>
 			
 	<td>	
