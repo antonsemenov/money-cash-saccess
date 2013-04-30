@@ -26,7 +26,7 @@
 		$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])).
 		"</td>
 </tr>";?>
-	<?php echo $this->Html->link($transaction['Transaction']['user_id'], array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id'])); ?>
+	<?php echo $this->Html->link($table_row, array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id'])); ?>
 
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
