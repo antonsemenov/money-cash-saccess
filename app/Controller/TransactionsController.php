@@ -19,7 +19,7 @@ class TransactionsController extends AppController {
 		));
 		$this->set('transactions', $user_transactions);
 		}
-	$tags = $user_transactions->Tag->find('list',array(
+	$tags = $this->Transaction->Tag->find('list',array(
 			'fields' => array('Tag.label')
 		));  
 	$this->set(compact('tags'));

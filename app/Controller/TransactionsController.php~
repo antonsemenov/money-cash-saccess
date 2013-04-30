@@ -18,12 +18,7 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'))
 		));
 		$this->set('transactions', $user_transactions);
-		}
-	$tags = $this->Transaction->Tag->find('list',array(
-			'fields' => array('Tag.label')
-		));  
-	$this->set(compact('tags'));
-			
+		}	
     }
 	
     public function view($id = null) {

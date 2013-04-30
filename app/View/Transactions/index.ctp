@@ -20,9 +20,7 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>
 	<td>
-	<?php foreach ($tags as $tag): ?>
-		<?php echo  $tag; ?>
-	<?php endforeach; ?>
+	<?php echo $tags['Transaction']['label'];?>
 	</td>	
 	<td>
 	<?php echo 

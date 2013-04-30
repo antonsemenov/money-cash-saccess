@@ -19,7 +19,11 @@
         <td><?php echo  $transaction['Transaction']['value']; ?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>
-	<td><?php echo  $transaction['Transaction']['tags']; ?></td>	
+	<td>
+	<?php foreach ($tags as $tag): ?>
+		<?php echo  $tag; ?>
+	<?php endforeach; ?>
+	</td>	
 	<td>
 	<?php echo 
 	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
