@@ -21,7 +21,8 @@
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
 	    <?php foreach ($transaction['Tag'] as $tag): ?>
-		<?php echo $tag['label']; ?></td>
+		<?php echo $tag['label']; ?>
+	    <?php endforeach; ?>	
 	<td>	
 	<?php
 	echo $this->Html->link('Info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
