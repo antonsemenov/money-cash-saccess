@@ -24,10 +24,11 @@
 	
 	</td>
 	<td>	
-	<?php	
+	<?php
+	$this->Html->link('Info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
 	$this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
 	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
-	/td>
+	</td>
     </tr>
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
