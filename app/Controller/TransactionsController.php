@@ -19,6 +19,12 @@ class TransactionsController extends AppController {
 		));
 		$this->set('transactions', $user_transactions);
 		}
+	$hi = $this->Transaction->Tag->find('list',array(
+			'fields' => array('Tag.label'),
+			'conditions' => array('Tag.transaction_id' =>  $transaction['Transaction']['id'])
+		));
+	$this->set('hi', $hi);
+	?>
 			
     }
 	
