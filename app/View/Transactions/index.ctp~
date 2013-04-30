@@ -20,7 +20,7 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
-	<?php echo $transaction['Tag']['label']; ?>
+	sss
 	
 	</td>
 	<td>	
