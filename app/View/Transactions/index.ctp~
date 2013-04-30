@@ -15,18 +15,18 @@
     <!-- Here is where we loop through our $posts array, printing out post info -->
 
     <?php foreach ($transactions as $transaction): ?>
-    <?php $table_row = 	"<tr>
-        <td>". $transaction['Transaction']['id']. "</td>
-	<td>". $transaction['Transaction']['user_id']. "</td>
-        <td>". $transaction['Transaction']['value']. "</td>
-        <td>". $transaction['Transaction']['created']. "</td>
-        <td>". $transaction['Transaction']['category']. "</td>
-	<td>". $transaction['Transaction']['payment_type']. "</td>
-		<td>" . $this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?')) .
-		$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])).
-		"</td>
-</tr>";?>
-	<?php echo $this->Html->link($transaction['Transaction']['user_id'], array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id'])); ?>
+    <tr>
+        <td><?php echo  $transaction['Transaction']['id']; ?></td>
+	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
+        <td><?php echo  $transaction['Transaction']['value']; ?></td>
+        <td><?php echo  $transaction['Transaction']['created']; ?></td>
+        <td><?php echo  $transaction['Transaction']['category']; ?></td>
+	<td><?php echo  $transaction['Transaction']['payment_type']; ?></td>
+	<td><?php echo $this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
+	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id']));
+	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id'])); ?></td>
+    </tr>
+	<?php echo $this->Html->link($table_row, array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id'])); ?>
 
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
