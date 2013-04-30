@@ -47,7 +47,6 @@ class TransactionsController extends AppController {
         }
   		$tags = $this->Transaction->Tag->find('list',array(
 			'fields' => array('Tag.label')
-			
 		));  
 		$this->set(compact('tags'));
     }
