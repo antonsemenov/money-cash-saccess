@@ -10,7 +10,8 @@ class TransactionsController extends AppController {
 	$user = $this->Auth->user();
 	if ($this->isAuthorized($this->Auth->user())){
 			
-		$this->set('transactions', $this->Transaction->find('all'));
+		$user_transactions = $this->Transaction->find('all');		
+		$this->set('transactions', $user_transactions);
 			
 	}else{
 		$user_transactions = $this->Transaction->find('all', array (
@@ -18,7 +19,7 @@ class TransactionsController extends AppController {
 		));
 		$this->set('transactions', $user_transactions);
 		}
-	$tags = $this->Transaction->Tag->find('list',array(
+	$tags = $user_transactions->Tag->find('list',array(
 			'fields' => array('Tag.label')
 		));  
 	$this->set(compact('tags'));
