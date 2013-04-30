@@ -22,7 +22,7 @@ class Transaction extends AppModel {
 	'Tag' => array(
 		'className' => 'Tag',
 		'joinTable' => 'transactions_tags',
-		'foreignKey' => 'transactions_id',
+		'foreignKey' => 'transaction_id',
 		'associationForeignKey' => 'tag_id',
 		'unique' => 'keepExisting',
 		)
