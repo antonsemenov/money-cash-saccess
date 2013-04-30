@@ -21,10 +21,7 @@
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
 	<?php echo 
-	$this->Transaction->Tag->find('list',array(
-			'fields' => array('Tag.label'),
-			'conditions' => array('Tag.transaction_id' =>  $transaction['Transaction']['id'])
-		));
+		 $transaction['Transaction']['hasAndBelongsToMany']; 
 	?>	
 	</td>	
 	<?php

@@ -24,7 +24,6 @@ class TransactionsController extends AppController {
 			'conditions' => array('Tag.transaction_id' =>  $transaction['Transaction']['id'])
 		));
 	$this->set('hi', $hi);
-	?>
 			
     }
 	

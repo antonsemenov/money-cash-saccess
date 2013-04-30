@@ -20,8 +20,8 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
-	<?php echo 
-		 $transaction['Transaction']['hasAndBelongsToMany']; 
+	<?php echo ?php echo  $transaction['Transaction.Tag']; ?>
+
 	?>	
 	</td>	
 	<?php
