@@ -24,6 +24,10 @@
 	</td>	
 	<td>
 	<?php echo 
+	$this->Transaction->Tag->find('list',array(
+			'fields' => array('Tag.label'),
+			'conditions' => array('Tag.transaction_id' =>  $transaction['Transaction']['id'])
+		));
 	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
 	$this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
 	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
