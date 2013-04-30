@@ -7,19 +7,22 @@ class TransactionsController extends AppController {
 	
 
     public function index() {
-		$user = $this->Auth->user();
-		if ($this->isAuthorized($this->Auth->user())){
+	$user = $this->Auth->user();
+	if ($this->isAuthorized($this->Auth->user())){
 			
-			$this->set('transactions', $this->Transaction->find('all'));
+		$this->set('transactions', $this->Transaction->find('all'));
 			
-		}else{
-			$user_transactions = $this->Transaction->find('all', array (
-				'conditions' => array('user_id' =>  $this->Auth->user('id'))
-			));
-		
-			$this->set('transactions', $user_transactions);
+	}else{
+		$user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('user_id' =>  $this->Auth->user('id'))
+		));
+		$this->set('transactions', $user_transactions);
 		}
-
+	$tags = $this->Transaction->Tag->find('list',array(
+			'fields' => array('Tag.label')
+		));  
+	$this->set(compact('tags'));
+			
     }
 	
     public function view($id = null) {
@@ -32,10 +35,6 @@ class TransactionsController extends AppController {
             throw new NotFoundException(__('Invalid post'));
         }
         $this->set('transaction', $transaction);
-	$tags = $this->Transaction->Tag->find('list',array(
-			'fields' => array('Tag.label')
-		));  
-		$this->set(compact('tags'));
     }
 	
 	public function add() {
