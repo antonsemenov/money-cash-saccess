@@ -7,7 +7,7 @@
 	<th>Created time</th>
 	<th>Category</th>
 	<th>Actions</th>
-		
+			
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
@@ -18,12 +18,13 @@
         <td><?php echo  $transaction['Transaction']['value']; ?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>
-	<td><?php echo  $transaction['Transaction']['payment_type']; ?></td>
+	<td><?php echo  $transaction['Transaction']['Transaction.Tag']; ?></td>	
 	<td>
 	<?php echo 
 	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
 	$this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
-	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?></td>
+	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
+	</td>
     </tr>
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
