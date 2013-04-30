@@ -20,7 +20,7 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>
 	<td>
-	<?php echo $tags;?>
+	<?php echo $transaction['Transaction']['Tag'];;?>
 	</td>	
 	<td>
 	<?php echo 
