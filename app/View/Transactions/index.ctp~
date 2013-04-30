@@ -21,8 +21,7 @@
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
 	<?php echo ?php echo  $transaction['Transaction']; ?>
-
-	?>	
+	
 	</td>	
 	<?php
 	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
