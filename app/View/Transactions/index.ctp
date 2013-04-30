@@ -6,6 +6,7 @@
         <th>Value</th>
 	<th>Created time</th>
 	<th>Category</th>
+	<th>Tags</th>
 	<th>Actions</th>
 			
     </tr>
@@ -18,7 +19,7 @@
         <td><?php echo  $transaction['Transaction']['value']; ?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>
-	<td><?php echo  $transaction['Transaction']['Transaction.Tag']; ?></td>	
+	<td><?php echo  $transaction['Transaction']['tags']; ?></td>	
 	<td>
 	<?php echo 
 	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	

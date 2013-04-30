@@ -32,11 +32,15 @@ class TransactionsController extends AppController {
             throw new NotFoundException(__('Invalid post'));
         }
         $this->set('transaction', $transaction);
+	$tags = $this->Transaction->Tag->find('list',array(
+			'fields' => array('Tag.label')
+		));  
+		$this->set(compact('tags'));
     }
 	
 	public function add() {
         if ($this->request->is('post')) {
-			$this->request->data['Transaction']['user_id'] = $this->Auth->user('id');
+	$this->request->data['Transaction']['user_id'] = $this->Auth->user('id');
             $this->Transaction->create();
             if ($this->Transaction->save($this->request->data)) {
                 $this->Session->setFlash('Your transaction has been saved.');
