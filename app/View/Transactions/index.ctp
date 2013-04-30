@@ -2,13 +2,11 @@
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
 <table class="table">
     <tr>
-        <th>Id</th>
         <th>User id</th>
         <th>Value</th>
-		<th>Created time</th>
-		<th>Category</th>
-		<th>Payment type</th>
-		<th>Actions</th>
+	<th>Created time</th>
+	<th>Category</th>
+	<th>Actions</th>
 		
     </tr>
 
@@ -16,7 +14,6 @@
 
     <?php foreach ($transactions as $transaction): ?>
     <tr>
-        <td><?php echo  $transaction['Transaction']['id']; ?></td>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
         <td><?php echo  $transaction['Transaction']['value']; ?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
@@ -28,8 +25,6 @@
 	$this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
 	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?></td>
     </tr>
-	<?php echo $this->Html->link($table_row, array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id'])); ?>
-
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
 </table>
