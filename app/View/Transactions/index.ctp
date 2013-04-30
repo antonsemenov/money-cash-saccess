@@ -20,11 +20,12 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
-	<?php print_r($transaction); ?>
+	<?php print_r($transaction['Tag']); ?>
 	
-	</td>	
+	</td>
+	<td>	
 	<?php
-	$this->Html->link('info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
+	$this->Html->link('Info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));	
 	$this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
 	$this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
