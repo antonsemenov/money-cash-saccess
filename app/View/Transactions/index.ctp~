@@ -1,8 +1,8 @@
 <h1>Users transactions</h1>
-<?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
-<?php echo $this->Html->link( 'Positive', array( 'action' => 'positive'), array( 'class' => 'pull-right')); ?>
 <div class="row-fluid">
 <div class="span8">
+<?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
+<?php echo $this->Html->link( 'Positive', array( 'action' => 'positive'), array( 'class' => 'pull-right')); ?>
 <table class="table">
     <tr>
         <th>User id</th>
