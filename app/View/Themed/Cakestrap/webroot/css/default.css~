@@ -12,14 +12,14 @@ body {
 }
 
 h1{
-	color: #fbb450;
+	color: #fbb452;
 }
 
 a{
-	color: #000;
+	color: #fbb452;
 }
 
 a:hover{
-	color: #fbb450;
+	color:#000;	
 }
-
+	
