@@ -44,7 +44,7 @@
 </table>
 </div>
 <div class="span4">
-<h3>Statistic</h3>
-
+Statistic<br>
+Value <?php $value_sum ?> 
 </div>
 </div>

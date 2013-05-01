@@ -40,11 +40,11 @@
 	</td>
     </tr>
 	<?php endforeach; ?>
-	<?php unset($transaction); ?>
 </table>
 </div>
 <div class="span4">
 Statistic<br>
-Value <?php $value_sum ?> 
+Value <?php  ?>
+<?php unset($transaction); ?> 
 </div>
 </div>
