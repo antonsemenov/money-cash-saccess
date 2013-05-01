@@ -5,7 +5,8 @@
 <?php echo $this->Html->link( 'Add New Transaction', array( 'action' => 'add'), array( 'class' => 'pull-right')); ?>
 <?php echo $this->Html->link( 'All', array( 'action' => 'index')); ?>
 <?php echo $this->Html->link( 'Positive', array( 'action' => 'positive')); ?>
-<?php echo $this->Html->link( 'Positive', array( 'action' => 'negatie')); ?>
+<?php echo $this->Html->link( 'Negative', array( 'action' => 'negative')); ?>
+
 <table class="table">
     <tr>
         <th>User id</th>
@@ -18,7 +19,7 @@
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
-
+    <?php $curr_value = 0; ?>
     <?php foreach ($transactions as $transaction): ?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
@@ -39,6 +40,7 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
+	$curr_value += $transaction['Transaction']['value']; 
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
 </table>
