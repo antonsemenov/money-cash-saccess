@@ -18,7 +18,6 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);
-	$this->set('sum_value', $this->getValue($user_transactions));
 			
     }
 	
@@ -127,14 +126,6 @@ class TransactionsController extends AppController {
 		$this->set('transactions', $user_transactions);
 		$this->render('index');
 				
-	}
-
-	public function getValue($transactions){
-		var $value;
-		foreach ($transactions as $transaction){
-			$value += $transaction['Transaction']['value'];	
-			return $value;
-		}
 	}
 }
 ?>
