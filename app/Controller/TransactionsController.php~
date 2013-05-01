@@ -135,7 +135,7 @@ class TransactionsController extends AppController {
 			echo '<script type="text/javascript">alert("' . $transaction['Transaction']['value']. '"); </script>';
 			$value += $transaction['Transaction']['value'];	
 		}
-		echo '<script type="text/javascript">alert("And our value is' . $transaction['Transaction']['value']. '"); </script>';
+		echo '<script type="text/javascript">alert("And our value is' .$value. '"); </script>';
 		return $value;
 	}
 }
