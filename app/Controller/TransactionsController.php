@@ -109,5 +109,14 @@ class TransactionsController extends AppController {
 		}
 		return parent::isAuthorized($user);
 	}
+	public function positive(){
+		$user = $this->Auth->user();
+		$user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value' >0
+		));
+		$this->set('transactions', $user_transactions);
+		$this->render('index');
+				
+	}
 }
 ?>

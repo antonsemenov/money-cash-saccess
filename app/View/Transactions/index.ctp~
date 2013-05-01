@@ -1,5 +1,6 @@
 <h1>Users transactions</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
+<?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'positive')); ?>
 <table class="table">
     <tr>
         <th>User id</th>
@@ -29,6 +30,7 @@
 	echo $this->Html->link('Info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));
 	echo ' ';	
 	echo $this->Form->postLink('Delete', array('action' => 'delete', $transaction['Transaction']['id']), array('confirm' => 'Are you sure?'));
+	echo ' ';
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
