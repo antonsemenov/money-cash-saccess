@@ -2,9 +2,10 @@
 <div class="row-fluid">
 <div class="span8">
 
-<?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
-<?php echo $this->Html->link( 'Positive', array( 'action' => 'positive'), array( 'class' => 'pull-right')); ?>
-
+<?php echo $this->Html->link( 'Add New Transaction', array( 'action' => 'add'), array( 'class' => 'pull-right')); ?>
+<?php echo $this->Html->link( 'All', array( 'action' => 'index')); ?>
+<?php echo $this->Html->link( 'Positive', array( 'action' => 'positive')); ?>
+<?php echo $this->Html->link( 'Positive', array( 'action' => 'negatie')); ?>
 <table class="table">
     <tr>
         <th>User id</th>
@@ -43,6 +44,6 @@
 </table>
 </div>
 <div class="span4">
-Result
+Statistic
 </div>
 </div>
