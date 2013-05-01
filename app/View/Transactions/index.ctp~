@@ -19,7 +19,6 @@
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
-    <?php $curr_value = 0; ?>
     <?php foreach ($transactions as $transaction): ?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
@@ -45,6 +44,7 @@
 </table>
 </div>
 <div class="span4">
-Statistic
+<h3>Statistic</h3>
+
 </div>
 </div>

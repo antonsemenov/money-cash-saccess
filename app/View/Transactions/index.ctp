@@ -19,7 +19,6 @@
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
-    <?php $curr_value = 0; ?>
     <?php foreach ($transactions as $transaction): ?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
@@ -40,12 +39,12 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
-	$curr_value += $transaction['Transaction']['value']; 
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
 </table>
 </div>
 <div class="span4">
-Statistic
+Statistic<br>
+Value <?php $value_sum ?> 
 </div>
 </div>
