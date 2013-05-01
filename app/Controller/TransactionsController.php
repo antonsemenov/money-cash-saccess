@@ -130,7 +130,7 @@ class TransactionsController extends AppController {
 	}
 
 	public function getValue($transactions){
-		$value;
+		var $value;
 		foreach ($transactions as $transaction){
 			$value += $transaction['Transaction']['value'];	
 			return $value;
