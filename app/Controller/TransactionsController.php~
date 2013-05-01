@@ -134,6 +134,7 @@ class TransactionsController extends AppController {
 		foreach ($transactions as $transaction){
 			$value += $transaction['Transaction']['value'];	
 		}
+		echo '<script type="text/javascript">alert("' . $value. '"); </script>';
 		return $value;
 	}
 }

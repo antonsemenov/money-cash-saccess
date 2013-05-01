@@ -132,9 +132,10 @@ class TransactionsController extends AppController {
 	public function getValue($transactions){
 		$value = 0;
 		foreach ($transactions as $transaction){
+			echo '<script type="text/javascript">alert("' . $transaction['Transaction']['value'];	. '"); </script>';
 			$value += $transaction['Transaction']['value'];	
 		}
-		echo '<script type="text/javascript">alert("' . $value. '"); </script>';
+		
 		return $value;
 	}
 }
