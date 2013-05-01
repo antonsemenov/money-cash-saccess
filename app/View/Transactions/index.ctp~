@@ -19,7 +19,12 @@
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
-    <?php foreach ($transactions as $transaction): ?>
+	    
+	<?php 
+	$sum_value = 0.0;	
+	foreach ($transactions as $transaction): 
+	$sum_value += $transaction['Transaction']['value'];	
+	?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
         <td><?php echo  $transaction['Transaction']['value']; ?></td>
@@ -29,7 +34,7 @@
 	<?php foreach ($transaction['Tag'] as $tag){
 		echo $tag['label']. ' ' ; 
 	} ?>
-			
+	
 	<td>	
 	<?php
 	echo $this->Html->link('Info', array('controller' => 'transactions', 'action' =>'view', $transaction['Transaction']['id']));
@@ -39,12 +44,13 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
+	
 	<?php endforeach; ?>
-	<?php unset($transaction); ?>
 </table>
 </div>
 <div class="span4">
 Statistic<br>
-Value <?php $value_sum ?> 
+Value <?php  ?>
+<?php unset($transaction); ?> 
 </div>
 </div>
