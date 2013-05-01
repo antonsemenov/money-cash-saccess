@@ -21,7 +21,7 @@
     <!-- Here is where we loop through our $posts array, printing out post info -->
 	    
 	<?php 
-	$sum_value = 0.0;	
+	$this->$sum_value = 0.0;	
 	foreach ($transactions as $transaction): 
 	$sum_value += $transaction['Transaction']['value'];	
 	?>

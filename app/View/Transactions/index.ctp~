@@ -50,7 +50,6 @@
 </div>
 <div class="span4">
 Statistic<br>
-Value <?php  ?>
-<?php unset($transaction); ?> 
+Value <?php  $sum_value?>
 </div>
 </div>
