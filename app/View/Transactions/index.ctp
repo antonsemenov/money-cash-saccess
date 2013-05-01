@@ -1,6 +1,8 @@
 <h1>Users transactions</h1>
 <?php echo $this->Html->link( 'Add Transaction', array( 'action' => 'add')); ?>
 <?php echo $this->Html->link( 'Positive', array( 'action' => 'positive')); ?>
+<div class="row-fluid">
+<div class="span8">
 <table class="table">
     <tr>
         <th>User id</th>
@@ -37,3 +39,8 @@
 	<?php endforeach; ?>
 	<?php unset($transaction); ?>
 </table>
+</div>
+<div class="span4">
+Result
+</div>
+</div>
