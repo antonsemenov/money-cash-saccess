@@ -18,7 +18,7 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);
-	$sum_value = 0;		
+	var $sum_value = 0;		
 	foreach ($user_transactions as $t){
 		$sum_value += $t['Transaction']['value'];
 	}
