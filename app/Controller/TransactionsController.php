@@ -17,8 +17,7 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'))
 		));
 		}
-	$this->set('transactions', $user_transactions);
-	var $sum_value = 0;		
+	$this->set('transactions', $user_transactions);		
 	foreach ($user_transactions as $t){
 		$sum_value += $t['Transaction']['value'];
 	}
