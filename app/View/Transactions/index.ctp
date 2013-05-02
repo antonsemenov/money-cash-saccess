@@ -23,9 +23,7 @@
 	<?php foreach ($transactions as $transaction):?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
-        <td><?php echo  $transaction['Transaction']['value']; 
-		  echo	'<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>';
-		?></td>
+        <td><?php echo  $transaction['Transaction']['value']; ?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
@@ -42,7 +40,7 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
-	
+	<?php echo '<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>'; ?>
 	<?php endforeach; ?>
 </table>
 </div>
