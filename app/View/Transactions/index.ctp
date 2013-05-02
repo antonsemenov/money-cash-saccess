@@ -24,7 +24,7 @@
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
         <td><?php echo  $transaction['Transaction']['value']; 
-		  echo	'<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'];.');</script>';
+		  echo	'<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>';
 		?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	

@@ -23,7 +23,9 @@
 	<?php foreach ($transactions as $transaction):?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
-        <td><?php echo  $transaction['Transaction']['value']; ?></td>
+        <td><?php echo  $transaction['Transaction']['value']; 
+		  echo	'<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'];.');</script>';
+		?></td>
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
