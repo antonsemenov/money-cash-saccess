@@ -27,7 +27,6 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
-	<?php echo '<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>';?>
 	<?php foreach ($transaction['Tag'] as $tag){
 		echo $tag['label']. ' ' ; 
 	} ?>
@@ -41,18 +40,12 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
+	
 	<?php endforeach; ?>
 </table>
 </div>
 <div class="span4">
 Statistic<br>
-<?php	$sum_value = 0;	
-	foreach ($transactions as $t){
-		$sum_value += $t['Transaction']['value'];
-		echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
-	}
-	echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
-	echo 'Value '. $sum_value;?>
-
+Value <?php  $sum_value?>
 </div>
 </div>
