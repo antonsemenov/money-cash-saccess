@@ -47,7 +47,7 @@
 <div class="span4">
 Statistic<br>
 <?php	$sum_value = 0;	
-	foreach ($user_transactions as $t){
+	foreach ($transactions as $t){
 		$sum_value += $t['Transaction']['value'];
 		echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
 	}
