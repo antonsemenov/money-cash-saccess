@@ -27,6 +27,7 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
+	<?php echo '<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>';?>
 	<?php foreach ($transaction['Tag'] as $tag){
 		echo $tag['label']. ' ' ; 
 	} ?>
@@ -40,9 +41,7 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
-	
 	<?php endforeach; ?>
-<?php endforeach; ?>
 </table>
 </div>
 <div class="span4">

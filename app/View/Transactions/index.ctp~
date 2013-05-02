@@ -27,6 +27,7 @@
         <td><?php echo  $transaction['Transaction']['created']; ?></td>
         <td><?php echo  $transaction['Transaction']['category']; ?></td>	
 	<td>
+	<?php echo '<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>';?>
 	<?php foreach ($transaction['Tag'] as $tag){
 		echo $tag['label']. ' ' ; 
 	} ?>
@@ -42,7 +43,6 @@
     </tr>
 	
 	<?php endforeach; ?>
-<?php endforeach; ?>
 </table>
 </div>
 <div class="span4">
@@ -53,7 +53,7 @@ Statistic<br>
 		echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
 	}
 	echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
-	echo 'Value '. $sum_value;
+	echo 'Value '. $sum_value;?>
 
 </div>
 </div>
