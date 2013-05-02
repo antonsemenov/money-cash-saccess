@@ -46,6 +46,6 @@
 </div>
 <div class="span4">
 Statistic<br>
-Value <?php  $sum_value?>
+Value <?php echo $sum_value;?>
 </div>
 </div>
