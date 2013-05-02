@@ -18,14 +18,7 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	$sum_value = 0;	
-	foreach ($user_transactions as $t){
-		$sum_value += $t['Transaction']['value'];
-		echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
-	}
-	echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';	
-	$this->set('sum_value', $sum_value);
-    }
+	    }
 	
     public function view($id = null) {
         if (!$id) {
