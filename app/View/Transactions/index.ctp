@@ -42,6 +42,7 @@
     </tr>
 	
 	<?php endforeach; ?>
+<?php endforeach; ?>
 </table>
 </div>
 <div class="span4">
@@ -52,8 +53,7 @@ Statistic<br>
 		echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
 	}
 	echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
-	echo 'Value '. $sum_value;
+	echo 'Value '. $sum_value;?>
 
-?>
 </div>
 </div>
