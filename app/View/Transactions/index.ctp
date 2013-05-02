@@ -40,7 +40,7 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
-	<?php echo '<br /><script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>'; ?>
+	<?php echo '<script type="text/javascript">alert('.$transaction['Transaction']['value'].');</script>'; ?>
 	<?php endforeach; ?>
 </table>
 </div>
