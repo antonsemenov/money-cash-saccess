@@ -21,7 +21,9 @@ class TransactionsController extends AppController {
 	$sum_value = 0;	
 	foreach ($user_transactions as $t){
 		$sum_value += $t['Transaction']['value'];
+		echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';
 	}
+	echo '<br /><script type="text/javascript">alert('.$sum_value.');</script>';	
 	$this->set('sum_value', $sum_value);
     }
 	
