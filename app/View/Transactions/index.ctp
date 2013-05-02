@@ -19,7 +19,7 @@
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
-	    
+	<?php $sum_value = 0;?>    
 	<?php foreach ($transactions as $transaction):?>
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
@@ -40,9 +40,11 @@
 	echo $this->Html->link('Edit', array('action' => 'edit', $transaction['Transaction']['id'])); ?>
 	</td>
     </tr>
+	<?php $sum_value += $transaction['Transaction']['value']; ?>
 	<script type="text/javascript">
-    	alert("<?php print $transaction['Transaction']['value']; ?>");
+    	alert("<?php print $sum_value ?>");
 	</script>
+		
 	<?php endforeach; ?>
 </table>
 </div>
