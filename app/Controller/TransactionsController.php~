@@ -18,15 +18,12 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	$begin = 0.0;
-	$sum_value = money_format('%i', $begin);
+	$sum_value = '$0.0';
 	$this->Session->setFlash("Begin ".$sum_value);
 	foreach ($user_transactions as $transaction){
 		
 		$sum_value += $transaction['Transaction']['value'];
-		$this->Session->setFlash("Value in cycle ".$sum_value);
 		}
-	$this->Session->setFlash("End ".$sum_value);
 	$this->set('sum_value', $sum_value);
 }
 	
