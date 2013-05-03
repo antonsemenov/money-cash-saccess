@@ -117,13 +117,29 @@ class TransactionsController extends AppController {
 		return parent::isAuthorized($user);
 	}
 	public function positive(){
-		$this->index();
+		$user = $this->Auth->user();
+		if ($this->isAuthorized($this->Auth->user())){
+		$user_transactions = $this->Transaction->find('all');
+		}else{
+		$user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value >' => 0)
+		));		
+		}		
+		$this->set('transactions', $user_transactions);
 		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
 	public function negative(){
-		$this->index();
+		$user = $this->Auth->user();
+		if ($this->isAuthorized($this->Auth->user())){
+		$user_transactions = $this->Transaction->find('all');
+		}else{
+		$user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value <' => 0)
+		));		
+		}
+		$this->set('transactions', $user_transactions);
 		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
