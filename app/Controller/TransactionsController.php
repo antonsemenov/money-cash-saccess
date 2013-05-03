@@ -18,7 +18,14 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	    }
+	$sum_value = money_format('%i', 0.0);
+	foreach ($user_transactions as $transaction){
+		
+		$sum_value += $transaction['Transaction']['value'];
+		}
+	$this->set('sum_value', $sum_value);
+}
+	
 	
     public function view($id = null) {
         if (!$id) {

@@ -42,7 +42,7 @@
     </tr>
 	<?php $sum_value += $transaction['Transaction']['value']; ?>
 	<script type="text/javascript">
-    	alert("<?php print  ?>");
+    	alert("<?php print $sum_value ?>");
 	</script>
 		
 	<?php endforeach; ?>
