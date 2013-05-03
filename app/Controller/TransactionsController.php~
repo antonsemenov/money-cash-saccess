@@ -18,7 +18,8 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	$sum_value = money_format('%i', 0.0);
+	$begin = 0.0;
+	$sum_value = money_format('%i', $begin);
 	$this->Session->setFlash("Begin ".$sum_value);
 	foreach ($user_transactions as $transaction){
 		
