@@ -136,7 +136,7 @@ class TransactionsController extends AppController {
 		$user = $this->Auth->user();
 		if ($this->isAuthorized($this->Auth->user())){
 		$user_transactions = $this->Transaction->find('all', array (
-			'conditions' => array('value >' => 0)
+			'conditions' => array('value <' => 0)
 		));
 		}else{
 		$user_transactions = $this->Transaction->find('all', array (

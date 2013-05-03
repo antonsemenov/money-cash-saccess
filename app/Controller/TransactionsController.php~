@@ -119,7 +119,9 @@ class TransactionsController extends AppController {
 	public function positive(){
 		$user = $this->Auth->user();
 		if ($this->isAuthorized($this->Auth->user())){
-		$user_transactions = $this->Transaction->find('all');
+		$user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('value >' => 0)
+		));		
 		}else{
 		$user_transactions = $this->Transaction->find('all', array (
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value >' => 0)
@@ -133,7 +135,9 @@ class TransactionsController extends AppController {
 	public function negative(){
 		$user = $this->Auth->user();
 		if ($this->isAuthorized($this->Auth->user())){
-		$user_transactions = $this->Transaction->find('all');
+		$user_transactions = $this->Transaction->find('all', array (
+			'conditions' => array('value >' => 0)
+		));
 		}else{
 		$user_transactions = $this->Transaction->find('all', array (
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value <' => 0)
