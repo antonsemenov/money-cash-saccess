@@ -6,14 +6,12 @@ class UsersController extends AppController {
     
 	public function index() {
 		if($this->Auth->user()){
-			if($this->isAuthorized($this->Auth->user())){
-				$this->User->recursive = 0;
-				$this->set('users', $this->paginate());
-			} else{
-				$this->Session->setFlash(__('You must log in to access that page'));
-                		$this->redirect(array('controller'=> 'users','action' => 'login'));
-			}
-		
+			$this->User->recursive = 0;
+			$this->set('users', $this->paginate());
+			
+		} else {
+			$this->Session->setFlash(__('You must log in to access that page'));
+               		$this->redirect(array('controller'=> 'users','action' => 'login'));
 		}
 
      public function beforeFilter() {

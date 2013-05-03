@@ -13,6 +13,7 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('You must log in to access that page'));
                		$this->redirect(array('controller'=> 'users','action' => 'login'));
 		}
+	}
 
      public function beforeFilter() {
         parent::beforeFilter();
