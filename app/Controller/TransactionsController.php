@@ -18,17 +18,23 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	$sum_value = '$0.0';
+	$sum_value = $this->money_summ($user_transactions);
 	
-	foreach ($user_transactions as $transaction){
-		
-		$sum_value += (float)substr($transaction['Transaction']['value'], strpos($transaction['Transaction']['value'],"$")+1);
-		}
-	$this->Session->setFlash("End ".$sum_value);
+
 	$this->set('sum_value', $sum_value);
 }
 	
 	
+    public function money_summ($trnsactions){
+	foreach ($transactions as $t){
+		
+		$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
+		}
+		return strval($sum_value); 
+	}
+
+    
+
     public function view($id = null) {
         if (!$id) {
             throw new NotFoundException(__('Invalid transaction'));
