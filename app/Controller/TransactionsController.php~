@@ -23,7 +23,7 @@ class TransactionsController extends AppController {
 		
 		$sum_value += $transaction['Transaction']['value'];
 		}
-	$this->set('$sum_value', $sum_value);
+	$this->set('sum_value', $sum_value);
 }
 	
 	
