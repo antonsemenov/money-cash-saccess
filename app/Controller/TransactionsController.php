@@ -22,9 +22,9 @@ class TransactionsController extends AppController {
 	foreach ($user_transactions as $transaction){
 		
 		$sum_value += $transaction['Transaction']['value'];
-		$session->setFlash("Calue in sikle ".$sum_value);
+		$session->setFlash($sum_value);
 		}
-	$session->setFlash("in the end ".$sum_value);
+	$session->setFlash($sum_value);
 	$this->set('sum_value', $sum_value);
 }
 	
