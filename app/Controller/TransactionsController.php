@@ -141,12 +141,13 @@ class TransactionsController extends AppController {
 	public function money_summ($transactions){
 		$sum_value = 0.0;	
 		foreach ($transactions as $t){
-			if ($t['Transaction']['value'] <= 0){
+			if ($t['Transaction']['value'][0] == '-'){
 				$sum_value -= (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
 			}else{
 				$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
 			}
 		}
+		
 		return strval('$'.$sum_value); 
 	}
 	
