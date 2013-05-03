@@ -137,7 +137,7 @@ class TransactionsController extends AppController {
 		
 			$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
 			}
-		return strval('$'$sum_value); 
+		return strval('$'.$sum_value); 
 	}
 
 }

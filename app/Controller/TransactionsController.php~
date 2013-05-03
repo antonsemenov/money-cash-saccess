@@ -116,6 +116,7 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value >' => 0)
 		));
 		$this->set('transactions', $user_transactions);
+		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
@@ -125,6 +126,7 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value <' => 0)
 		));
 		$this->set('transactions', $user_transactions);
+		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
