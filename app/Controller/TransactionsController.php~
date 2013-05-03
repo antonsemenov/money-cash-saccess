@@ -133,7 +133,7 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value <' => 0)
 		));
 		$this->set('transactions', $user_transactions);
-		$this->set('sum_value', '-'.$this->money_summ($user_transactions));
+		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
@@ -141,9 +141,12 @@ class TransactionsController extends AppController {
 	public function money_summ($transactions){
 		$sum_value = 0.0;	
 		foreach ($transactions as $t){
-		
-			$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
+			if ($t['Transaction']['value'] <= 0){
+				$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
+			}else{
+				$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
 			}
+		}
 		return strval('$'.$sum_value); 
 	}
 	
