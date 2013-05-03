@@ -8,7 +8,7 @@ class TransactionsController extends AppController {
 
     public function index() {
 	$user = $this->Auth->user();
-	if (!$user->exists()) {	
+	if ($user) {	
 		if ($this->isAuthorized($this->Auth->user())){
 		
 			$user_transactions = $this->Transaction->find('all');		
@@ -22,7 +22,7 @@ class TransactionsController extends AppController {
 	}
 	else {
 		$this->Session->setFlash(__('You must log in to access that page'));
-                $this->redirect(array('action' => 'home'));
+                $this->redirect(array('controller'=> '','action' => 'home'));
 	}
 	$this->set('transactions', $user_transactions);		
 	
