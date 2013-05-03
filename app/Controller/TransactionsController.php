@@ -24,7 +24,7 @@ class TransactionsController extends AppController {
 		
 		$sum_value += (float)substr($transaction['Transaction']['value'], strpos($transaction['Transaction']['value'],"$")+1);
 		}
-	$this->Session->setFlash("End ".$sum_value;
+	$this->Session->setFlash("End ".$sum_value);
 	$this->set('sum_value', $sum_value);
 }
 	
