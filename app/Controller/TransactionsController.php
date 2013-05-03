@@ -19,7 +19,7 @@ class TransactionsController extends AppController {
 		}
 	$this->set('transactions', $user_transactions);		
 	
-	$this->set('sum_value', $this->money_summ($user_transactions););
+	$this->set('sum_value', $this->money_summ($user_transactions));
 }
 	
 	

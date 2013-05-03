@@ -18,19 +18,18 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	$sum_value = $this->money_summ($user_transactions);
 	
-
-	$this->set('sum_value', $sum_value);
+	$this->set('sum_value', $this->money_summ($user_transactions););
 }
 	
 	
     public function money_summ($transactions){
+	$sum_value = 0.0;	
 	foreach ($transactions as $t){
 		
 		$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
 		}
-		return strval($sum_value); 
+	return strval($sum_value); 
 	}
 
     
