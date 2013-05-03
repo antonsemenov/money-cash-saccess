@@ -146,6 +146,11 @@ class TransactionsController extends AppController {
 			}
 		return strval('$'.$sum_value); 
 	}
+	
+	public function beforeFilter() {
+	        parent::beforeFilter();
+	        $this->Auth->allow('*');
+    }
 
 }
 ?>
