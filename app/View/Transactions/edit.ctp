@@ -3,7 +3,6 @@
 <fieldset>
 	<?php 
 		echo $this->Form->input('value'); 
-		echo $this->Form->input('category');
 	?>
 
 	<?php 
