@@ -47,9 +47,7 @@
 	<script type="text/javascript">
     	alert("<?php print $sum_value ?>");
 	</script>
-Statistic<br>
-Value <?php
-	echo $sum_value;	
-?>
+<h1>Statistic</h1><br>
+<h3><?php echo $sum_value; ?><h3>
 </div>
 </div>
