@@ -8,7 +8,7 @@ class TransactionsController extends AppController {
 
     public function index() {
 	$user = $this->Auth->user();
-	if (!$this->User->exists()) {	
+	if (!$user->exists()) {	
 		if ($this->isAuthorized($this->Auth->user())){
 		
 			$user_transactions = $this->Transaction->find('all');		

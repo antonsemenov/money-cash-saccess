@@ -21,7 +21,7 @@ class TransactionsController extends AppController {
 			}
 	}
 	else {
-		$this->Session->setFlash(__('The user has been saved'));
+		$this->Session->setFlash(__('You must log in to access that page'));
                 $this->redirect(array('action' => 'home'));
 	}
 	$this->set('transactions', $user_transactions);		
