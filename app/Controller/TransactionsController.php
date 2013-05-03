@@ -21,18 +21,6 @@ class TransactionsController extends AppController {
 	
 	$this->set('sum_value', $this->money_summ($user_transactions));
 }
-	
-	
-    public function money_summ($transactions){
-	$sum_value = 0.0;	
-	foreach ($transactions as $t){
-		
-		$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
-		}
-	return strval($sum_value); 
-	}
-
-    
 
     public function view($id = null) {
         if (!$id) {
@@ -128,6 +116,7 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value >' => 0)
 		));
 		$this->set('transactions', $user_transactions);
+		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
@@ -137,8 +126,19 @@ class TransactionsController extends AppController {
 			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value <' => 0)
 		));
 		$this->set('transactions', $user_transactions);
+		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
+	
+	public function money_summ($transactions){
+		$sum_value = 0.0;	
+		foreach ($transactions as $t){
+		
+			$sum_value += (float)substr($t['Transaction']['value'], strpos($t['Transaction']['value'],"$")+1);
+			}
+		return strval('$'$sum_value); 
+	}
+
 }
 ?>
