@@ -21,7 +21,7 @@ class TransactionsController extends AppController {
 	$sum_value = '$0.0';
 	
 	foreach ($user_transactions as $transaction){
-		$this->Session->setFlash("Begin ".$transaction['Transaction']['value']);
+		$this->Session->setFlash("Begin ".gettype($transaction['Transaction']['value']));
 		$sum_value += $transaction['Transaction']['value'];
 		}
 	$this->set('sum_value', $sum_value);
