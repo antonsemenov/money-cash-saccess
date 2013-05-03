@@ -5,13 +5,16 @@ class UsersController extends AppController {
 	public $helpers = array('Html', 'Form');
     
 	public function index() {
+		if($this->Auth->user()){
+			if($this->isAuthorized($this->Auth->user())){
+				$this->User->recursive = 0;
+				$this->set('users', $this->paginate());
+			} else{
+				$this->Session->setFlash(__('You must log in to access that page'));
+                		$this->redirect(array('controller'=> 'users','action' => 'login'));
+			}
 		
-		if($this->isAuthorized($this->Auth->user())){
-			$this->User->recursive = 0;
-			$this->set('users', $this->paginate());
-		} else
-		throw new NotFoundException(__('Only admin can get access to this page'));
-	}
+		}
 
      public function beforeFilter() {
         parent::beforeFilter();
@@ -19,14 +22,6 @@ class UsersController extends AppController {
     }
  
 
-
-    public function view($id = null) {
-        $this->User->id = $id;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
-        }
-        $this->set('user', $this->User->read(null, $id));
-    }
 
     public function add() {
         if ($this->request->is('post')) {
