@@ -18,10 +18,13 @@ class TransactionsController extends AppController {
 		));
 		}
 	$this->set('transactions', $user_transactions);		
-	$sum_value = 0.0;
+	$sum_value = '$0.0';
+	
 	foreach ($user_transactions as $transaction){
-		$sum_value += (float)substr($input, strpos($transaction['Transaction']['value'], "$")+1);
+		
+		$sum_value += (float)substr($input, strpos(, "$")+1);
 		}
+	$this->Session->setFlash("End ".$sum_value);
 	$this->set('sum_value', $sum_value);
 }
 	

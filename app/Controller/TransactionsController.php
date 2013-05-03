@@ -22,9 +22,9 @@ class TransactionsController extends AppController {
 	
 	foreach ($user_transactions as $transaction){
 		
-		$sum_value += (float)substr($input, strpos(, "$")+1);
+		$sum_value += (float)substr($transaction['Transaction']['value']), strpos(, "$")+1);
 		}
-	$this->Session->setFlash("End ".$sum_value);
+	$this->Session->setFlash("End ".$sum_value;
 	$this->set('sum_value', $sum_value);
 }
 	
