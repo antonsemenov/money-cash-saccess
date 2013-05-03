@@ -23,8 +23,7 @@
     <tr>
 	<td><?php echo  $transaction['Transaction']['user_id']; ?></td>
         <td><?php echo  $transaction['Transaction']['value']; ?></td>
-        <td><?php echo  $transaction['Transaction']['created']; ?></td>
-        <td><?php echo  $transaction['Transaction']['category']; ?></td>	
+        <td><?php echo  $transaction['Transaction']['created']; ?></td>	
 	<td>
 	<?php foreach ($transaction['Tag'] as $tag){
 		echo $tag['label']. ' ' ; 
