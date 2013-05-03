@@ -47,8 +47,9 @@
 	<script type="text/javascript">
     	alert("<?php print $sum_value ?>");
 	</script>
-<h1>Transactions sum:</h1><br>
 <hr>
+<h1>Value sum:</h1><br>
 <h3><?php echo $sum_value; ?><h3>
+<hr>
 </div>
 </div>
