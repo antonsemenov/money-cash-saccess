@@ -22,7 +22,7 @@ class TransactionsController extends AppController {
 	}
 	else {
 		$this->Session->setFlash(__('You must log in to access that page'));
-                $this->redirect(array('controller'=> '','action' => 'home'));
+                $this->redirect(array('controller'=> 'display','action' => 'home'));
 	}
 	$this->set('transactions', $user_transactions);		
 	
