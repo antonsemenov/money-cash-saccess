@@ -25,7 +25,6 @@ class TransactionsController extends AppController {
 		$sum_value += $transaction['Transaction']['value'];
 		$this->Session->setFlash("Value in cycle ".$sum_value);
 		}
-	$session->setFlash($sum_value);
 	$this->Session->setFlash("End ".$sum_value);
 	$this->set('sum_value', $sum_value);
 }
