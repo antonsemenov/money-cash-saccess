@@ -8,15 +8,22 @@ class TransactionsController extends AppController {
 
     public function index() {
 	$user = $this->Auth->user();
-	if ($this->isAuthorized($this->Auth->user())){
-				
-		$user_transactions = $this->Transaction->find('all');		
-			
-	}else{
-		$user_transactions = $this->Transaction->find('all', array (
-			'conditions' => array('user_id' =>  $this->Auth->user('id'))
-		));
-		}
+	if (!$this->User->exists()) {	
+		if ($this->isAuthorized($this->Auth->user())){
+		
+			$user_transactions = $this->Transaction->find('all');		
+
+		}else{
+			$user_transactions = $this->Transaction->find('all', array (
+				'conditions' => array('user_id' =>  $this->Auth->user('id'))
+			));
+
+			}
+	}
+	else {
+		$this->Session->setFlash(__('You must log in to access that page'));
+                $this->redirect(array('action' => 'home'));
+	}
 	$this->set('transactions', $user_transactions);		
 	
 	$this->set('sum_value', $this->money_summ($user_transactions));
