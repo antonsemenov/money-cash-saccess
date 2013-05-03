@@ -24,8 +24,7 @@ class TransactionsController extends AppController {
 		$this->Session->setFlash(__('You must log in to access that page'));
                 $this->redirect(array('controller'=> 'users','action' => 'login'));
 	}
-	$this->set('transactions', $user_transactions);		
-	
+	$this->set('transactions', $user_transactions);	
 	$this->set('sum_value', $this->money_summ($user_transactions));
 }
 
@@ -118,21 +117,13 @@ class TransactionsController extends AppController {
 		return parent::isAuthorized($user);
 	}
 	public function positive(){
-		$user = $this->Auth->user();
-		$user_transactions = $this->Transaction->find('all', array (
-			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value >' => 0)
-		));
-		$this->set('transactions', $user_transactions);
+		$this->index();
 		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
 	}
 	public function negative(){
-		$user = $this->Auth->user();
-		$user_transactions = $this->Transaction->find('all', array (
-			'conditions' => array('user_id' =>  $this->Auth->user('id'), 'value <' => 0)
-		));
-		$this->set('transactions', $user_transactions);
+		$this->index();
 		$this->set('sum_value', $this->money_summ($user_transactions));
 		$this->render('index');
 				
