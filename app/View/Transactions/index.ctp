@@ -44,12 +44,12 @@
 </table>
 </div>
 <div class="span4">
-Statistic<br>
-Value <?php
-	echo $sum_value;
 	<script type="text/javascript">
     	alert("<?php print $sum_value ?>");
-	</script>	
+	</script>
+Statistic<br>
+Value <?php
+	echo $sum_value;	
 ?>
 </div>
 </div>
